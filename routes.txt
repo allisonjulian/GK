@@ -1,0 +1,134 @@
+ Prefix Verb URI Pattern                   Controller#Action
+ shoppe      /shoppe                       Shoppe::Engine
+product GET  /product/:permalink(.:format) products#show
+    buy POST /product/:permalink(.:format) products#buy
+ basket GET  /basket(.:format)             orders#show
+   root GET  /                             products#index
+
+Routes for Shoppe::Engine:
+                                             GET      /attachment/:id/:filename.:extension(.:format)                                     shoppe/attachments#show
+                            search_customers POST     /customers/search(.:format)                                                        shoppe/customers#search
+                          customer_addresses GET      /customers/:customer_id/addresses(.:format)                                        shoppe/addresses#index
+                                             POST     /customers/:customer_id/addresses(.:format)                                        shoppe/addresses#create
+                        new_customer_address GET      /customers/:customer_id/addresses/new(.:format)                                    shoppe/addresses#new
+                       edit_customer_address GET      /customers/:customer_id/addresses/:id/edit(.:format)                               shoppe/addresses#edit
+                            customer_address GET      /customers/:customer_id/addresses/:id(.:format)                                    shoppe/addresses#show
+                                             PATCH    /customers/:customer_id/addresses/:id(.:format)                                    shoppe/addresses#update
+                                             PUT      /customers/:customer_id/addresses/:id(.:format)                                    shoppe/addresses#update
+                                             DELETE   /customers/:customer_id/addresses/:id(.:format)                                    shoppe/addresses#destroy
+                                   customers GET      /customers(.:format)                                                               shoppe/customers#index
+                                             POST     /customers(.:format)                                                               shoppe/customers#create
+                                new_customer GET      /customers/new(.:format)                                                           shoppe/customers#new
+                               edit_customer GET      /customers/:id/edit(.:format)                                                      shoppe/customers#edit
+                                    customer GET      /customers/:id(.:format)                                                           shoppe/customers#show
+                                             PATCH    /customers/:id(.:format)                                                           shoppe/customers#update
+                                             PUT      /customers/:id(.:format)                                                           shoppe/customers#update
+                                             DELETE   /customers/:id(.:format)                                                           shoppe/customers#destroy
+              product_category_localisations GET      /product_categories/:product_category_id/localisations(.:format)                   shoppe/product_category_localisations#index
+                                             POST     /product_categories/:product_category_id/localisations(.:format)                   shoppe/product_category_localisations#create
+           new_product_category_localisation GET      /product_categories/:product_category_id/localisations/new(.:format)               shoppe/product_category_localisations#new
+          edit_product_category_localisation GET      /product_categories/:product_category_id/localisations/:id/edit(.:format)          shoppe/product_category_localisations#edit
+               product_category_localisation GET      /product_categories/:product_category_id/localisations/:id(.:format)               shoppe/product_category_localisations#show
+                                             PATCH    /product_categories/:product_category_id/localisations/:id(.:format)               shoppe/product_category_localisations#update
+                                             PUT      /product_categories/:product_category_id/localisations/:id(.:format)               shoppe/product_category_localisations#update
+                                             DELETE   /product_categories/:product_category_id/localisations/:id(.:format)               shoppe/product_category_localisations#destroy
+                          product_categories GET      /product_categories(.:format)                                                      shoppe/product_categories#index
+                                             POST     /product_categories(.:format)                                                      shoppe/product_categories#create
+                        new_product_category GET      /product_categories/new(.:format)                                                  shoppe/product_categories#new
+                       edit_product_category GET      /product_categories/:id/edit(.:format)                                             shoppe/product_categories#edit
+                            product_category GET      /product_categories/:id(.:format)                                                  shoppe/product_categories#show
+                                             PATCH    /product_categories/:id(.:format)                                                  shoppe/product_categories#update
+                                             PUT      /product_categories/:id(.:format)                                                  shoppe/product_categories#update
+                                             DELETE   /product_categories/:id(.:format)                                                  shoppe/product_categories#destroy
+                            product_variants GET      /products/:product_id/variants(.:format)                                           shoppe/variants#index
+                                             POST     /products/:product_id/variants(.:format)                                           shoppe/variants#create
+                         new_product_variant GET      /products/:product_id/variants/new(.:format)                                       shoppe/variants#new
+                        edit_product_variant GET      /products/:product_id/variants/:id/edit(.:format)                                  shoppe/variants#edit
+                             product_variant GET      /products/:product_id/variants/:id(.:format)                                       shoppe/variants#show
+                                             PATCH    /products/:product_id/variants/:id(.:format)                                       shoppe/variants#update
+                                             PUT      /products/:product_id/variants/:id(.:format)                                       shoppe/variants#update
+                                             DELETE   /products/:product_id/variants/:id(.:format)                                       shoppe/variants#destroy
+                       product_localisations GET      /products/:product_id/localisations(.:format)                                      shoppe/product_localisations#index
+                                             POST     /products/:product_id/localisations(.:format)                                      shoppe/product_localisations#create
+                    new_product_localisation GET      /products/:product_id/localisations/new(.:format)                                  shoppe/product_localisations#new
+                   edit_product_localisation GET      /products/:product_id/localisations/:id/edit(.:format)                             shoppe/product_localisations#edit
+                        product_localisation GET      /products/:product_id/localisations/:id(.:format)                                  shoppe/product_localisations#show
+                                             PATCH    /products/:product_id/localisations/:id(.:format)                                  shoppe/product_localisations#update
+                                             PUT      /products/:product_id/localisations/:id(.:format)                                  shoppe/product_localisations#update
+                                             DELETE   /products/:product_id/localisations/:id(.:format)                                  shoppe/product_localisations#destroy
+                             import_products GET      /products/import(.:format)                                                         shoppe/products#import
+                                             POST     /products/import(.:format)                                                         shoppe/products#import
+                                    products GET      /products(.:format)                                                                shoppe/products#index
+                                             POST     /products(.:format)                                                                shoppe/products#create
+                                 new_product GET      /products/new(.:format)                                                            shoppe/products#new
+                                edit_product GET      /products/:id/edit(.:format)                                                       shoppe/products#edit
+                                     product GET      /products/:id(.:format)                                                            shoppe/products#show
+                                             PATCH    /products/:id(.:format)                                                            shoppe/products#update
+                                             PUT      /products/:id(.:format)                                                            shoppe/products#update
+                                             DELETE   /products/:id(.:format)                                                            shoppe/products#destroy
+                               search_orders POST     /orders/search(.:format)                                                           shoppe/orders#search
+                                accept_order POST     /orders/:id/accept(.:format)                                                       shoppe/orders#accept
+                                reject_order POST     /orders/:id/reject(.:format)                                                       shoppe/orders#reject
+                                  ship_order POST     /orders/:id/ship(.:format)                                                         shoppe/orders#ship
+                         despatch_note_order GET      /orders/:id/despatch_note(.:format)                                                shoppe/orders#despatch_note
+                        refund_order_payment GET|POST /orders/:order_id/payments/:id/refund(.:format)                                    shoppe/payments#refund
+                              order_payments POST     /orders/:order_id/payments(.:format)                                               shoppe/payments#create
+                               order_payment DELETE   /orders/:order_id/payments/:id(.:format)                                           shoppe/payments#destroy
+                                      orders GET      /orders(.:format)                                                                  shoppe/orders#index
+                                             POST     /orders(.:format)                                                                  shoppe/orders#create
+                                   new_order GET      /orders/new(.:format)                                                              shoppe/orders#new
+                                  edit_order GET      /orders/:id/edit(.:format)                                                         shoppe/orders#edit
+                                       order GET      /orders/:id(.:format)                                                              shoppe/orders#show
+                                             PATCH    /orders/:id(.:format)                                                              shoppe/orders#update
+                                             PUT      /orders/:id(.:format)                                                              shoppe/orders#update
+                                             DELETE   /orders/:id(.:format)                                                              shoppe/orders#destroy
+                     stock_level_adjustments GET      /stock_level_adjustments(.:format)                                                 shoppe/stock_level_adjustments#index
+                                             POST     /stock_level_adjustments(.:format)                                                 shoppe/stock_level_adjustments#create
+    delivery_service_delivery_service_prices GET      /delivery_services/:delivery_service_id/delivery_service_prices(.:format)          shoppe/delivery_service_prices#index
+                                             POST     /delivery_services/:delivery_service_id/delivery_service_prices(.:format)          shoppe/delivery_service_prices#create
+ new_delivery_service_delivery_service_price GET      /delivery_services/:delivery_service_id/delivery_service_prices/new(.:format)      shoppe/delivery_service_prices#new
+edit_delivery_service_delivery_service_price GET      /delivery_services/:delivery_service_id/delivery_service_prices/:id/edit(.:format) shoppe/delivery_service_prices#edit
+     delivery_service_delivery_service_price GET      /delivery_services/:delivery_service_id/delivery_service_prices/:id(.:format)      shoppe/delivery_service_prices#show
+                                             PATCH    /delivery_services/:delivery_service_id/delivery_service_prices/:id(.:format)      shoppe/delivery_service_prices#update
+                                             PUT      /delivery_services/:delivery_service_id/delivery_service_prices/:id(.:format)      shoppe/delivery_service_prices#update
+                                             DELETE   /delivery_services/:delivery_service_id/delivery_service_prices/:id(.:format)      shoppe/delivery_service_prices#destroy
+                           delivery_services GET      /delivery_services(.:format)                                                       shoppe/delivery_services#index
+                                             POST     /delivery_services(.:format)                                                       shoppe/delivery_services#create
+                        new_delivery_service GET      /delivery_services/new(.:format)                                                   shoppe/delivery_services#new
+                       edit_delivery_service GET      /delivery_services/:id/edit(.:format)                                              shoppe/delivery_services#edit
+                            delivery_service GET      /delivery_services/:id(.:format)                                                   shoppe/delivery_services#show
+                                             PATCH    /delivery_services/:id(.:format)                                                   shoppe/delivery_services#update
+                                             PUT      /delivery_services/:id(.:format)                                                   shoppe/delivery_services#update
+                                             DELETE   /delivery_services/:id(.:format)                                                   shoppe/delivery_services#destroy
+                                   tax_rates GET      /tax_rates(.:format)                                                               shoppe/tax_rates#index
+                                             POST     /tax_rates(.:format)                                                               shoppe/tax_rates#create
+                                new_tax_rate GET      /tax_rates/new(.:format)                                                           shoppe/tax_rates#new
+                               edit_tax_rate GET      /tax_rates/:id/edit(.:format)                                                      shoppe/tax_rates#edit
+                                    tax_rate GET      /tax_rates/:id(.:format)                                                           shoppe/tax_rates#show
+                                             PATCH    /tax_rates/:id(.:format)                                                           shoppe/tax_rates#update
+                                             PUT      /tax_rates/:id(.:format)                                                           shoppe/tax_rates#update
+                                             DELETE   /tax_rates/:id(.:format)                                                           shoppe/tax_rates#destroy
+                                       users GET      /users(.:format)                                                                   shoppe/users#index
+                                             POST     /users(.:format)                                                                   shoppe/users#create
+                                    new_user GET      /users/new(.:format)                                                               shoppe/users#new
+                                   edit_user GET      /users/:id/edit(.:format)                                                          shoppe/users#edit
+                                        user GET      /users/:id(.:format)                                                               shoppe/users#show
+                                             PATCH    /users/:id(.:format)                                                               shoppe/users#update
+                                             PUT      /users/:id(.:format)                                                               shoppe/users#update
+                                             DELETE   /users/:id(.:format)                                                               shoppe/users#destroy
+                                   countries GET      /countries(.:format)                                                               shoppe/countries#index
+                                             POST     /countries(.:format)                                                               shoppe/countries#create
+                                 new_country GET      /countries/new(.:format)                                                           shoppe/countries#new
+                                edit_country GET      /countries/:id/edit(.:format)                                                      shoppe/countries#edit
+                                     country GET      /countries/:id(.:format)                                                           shoppe/countries#show
+                                             PATCH    /countries/:id(.:format)                                                           shoppe/countries#update
+                                             PUT      /countries/:id(.:format)                                                           shoppe/countries#update
+                                             DELETE   /countries/:id(.:format)                                                           shoppe/countries#destroy
+                                  attachment DELETE   /attachments/:id(.:format)                                                         shoppe/attachments#destroy
+                                    settings GET      /settings(.:format)                                                                shoppe/settings#edit
+                                             POST     /settings(.:format)                                                                shoppe/settings#update
+                                       login GET      /login(.:format)                                                                   shoppe/sessions#new
+                                             POST     /login(.:format)                                                                   shoppe/sessions#create
+                                 login_reset GET|POST /login/reset(.:format)                                                             shoppe/sessions#reset
+                                      logout DELETE   /logout(.:format)                                                                  shoppe/sessions#destroy
+                                        root GET      /                                                                                  shoppe/dashboard#home
