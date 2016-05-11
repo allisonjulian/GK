@@ -8,6 +8,25 @@
 </head>
 <body>
 
+<section id="products">
+<div class="row">
+  <div class="headerimg">
+	<br><br><br>
+    <!-- <div class="ui centered grid"> -->
+    <div class="ui centered grid">
+        <div class="two wide column"></div>
+        <div class="two wide column headerlinks"><%= link_to "Home", root_path %></div>
+        <div class="two wide column headerlinks"><%= link_to "Products", root_path %></div>
+        <div class="four wide column headerlinks"><%= link_to " ", root_path %></div>
+        <div class="one wide column"></div>
+        <div class="two wide column headerlinks"><%= link_to "My Cart", root_path %></div>
+        <div class="two wide column headerlinks"><%= link_to "Verify", root_path %></div>
+        <div class="one wide column"></div>
+  	</div>
+  </div>
+</div>
+<br>
+
 <% if current_order %>
 <p style="border:1px solid black;padding:10px;">
   You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
@@ -20,7 +39,14 @@
 
 <%= link_to "Checkout", checkout_path %>
 
+</section>
+
 <%= yield %>
+
+<br><br>
+
+<div class="footerimg">
+</div>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
       <td>Quantity</td>
       <td>Product</td>
       <td>Sub-Total</td>
-      <td>Tax</td>
+      <!-- <td>Tax</td> -->
       <td>Total</td>
     </tr>
   </thead>
@@ -14,7 +14,7 @@
       <td><%= item.quantity %></td>
       <td><%= item.ordered_item.full_name %></td>
       <td><%= number_to_currency item.sub_total %></td>
-      <td><%= number_to_currency item.tax_amount %></td>
+      <!-- <td><%= number_to_currency item.tax_amount %></td> -->
       <td><%= number_to_currency item.total %></td>
     </tr>
     <% end %>
@@ -24,7 +24,7 @@
       <td></td>
       <td><%= order.delivery_service.name %></td>
       <td><%= number_to_currency order.delivery_price %></td>
-      <td><%= number_to_currency order.delivery_tax_amount %></td>
+      <!-- <td><%= number_to_currency order.delivery_tax_amount %></td> -->
       <td><%= number_to_currency order.delivery_price + order.delivery_tax_amount %></td>
     </tr>
     <% end %>
@@ -32,15 +32,15 @@
   </tbody>
   <tfoot>
     <tr>
-      <td colspan='4'>Sub-Total</td>
+      <td colspan='3'>Sub-Total</td>
       <td><%= number_to_currency order.total_before_tax %></td>
     </tr>
-    <tr>
+    <!-- <tr>
       <td colspan='4'>Tax</td>
       <td><%= number_to_currency order.tax %></td>
-    </tr>
+    </tr> -->
     <tr>
-      <td colspan='4'>Total</td>
+      <td colspan='3'>Total</td>
       <td><%= number_to_currency order.total %></td>
     </tr>
   </tfoot>

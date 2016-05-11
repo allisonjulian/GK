@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+@font-face {
+  font-family: 'ChampagneLimousines';
+  src: url("/assets/ChampagneLimousines.woff") format("woff");
+  font-style: normal;
+  font-style: normal;
+}
+/* line 25, /Users/maryallisonsjulian/ruby/GK/app/assets/stylesheets/application.css.scss */
+.headerimg {
+  height: 31vh;
+  width: 80vw;
+  /*height: auto;
+  width: auto;*/
+  background-image: url(/assets/header.png);
+  background-size: cover;
+  background-position: center;
+  /* margin-right: 5vw; */
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1cm;
+  /* z-index: 1; */
+  position: relative;
+}
+
+/* line 41, /Users/maryallisonsjulian/ruby/GK/app/assets/stylesheets/application.css.scss */
+.headerlinks {
+  font-family: 'ChampagneLimousines' !important;
+  font-style: normal;
+  /*color: #ffffff;*/
+  font-size: 1.4em;
+  margin-top: 5vh;
+  /*	z-index: 6; */
+  z-index: 6;
+}
+
+/*.headerlinks:hover {
+	font-family: 'ChampagneLimousines' !important;
+	font-style: normal;
+	color: #ffffff;
+	font-size: 1.4em;
+	margin-top: 5vh;
+	z-index: 6;
+	text-decoration: none;
+	color: black;
+
+}*/
+/* line 63, /Users/maryallisonsjulian/ruby/GK/app/assets/stylesheets/application.css.scss */
+#products {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+/* line 68, /Users/maryallisonsjulian/ruby/GK/app/assets/stylesheets/application.css.scss */
+.nav-row {
+  width: 90vw;
+}
+
+/* line 72, /Users/maryallisonsjulian/ruby/GK/app/assets/stylesheets/application.css.scss */
+.chicken {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 77, /Users/maryallisonsjulian/ruby/GK/app/assets/stylesheets/application.css.scss */
+.chicken:hover {
+  text-decoration: none;
+  color: yellow;
+  background-color: transparent;
+}
+
+@media (max-width: 980px) {
+  /* line 84, /Users/maryallisonsjulian/ruby/GK/app/assets/stylesheets/application.css.scss */
+  .headerimg {
+    width: 90vw;
+    height: 20vh;
+  }
+
+  /* line 88, /Users/maryallisonsjulian/ruby/GK/app/assets/stylesheets/application.css.scss */
+  .headerlinks {
+    font-size: 1em;
+    margin-top: 9vh;
+  }
+
+  /* line 92, /Users/maryallisonsjulian/ruby/GK/app/assets/stylesheets/application.css.scss */
+  #products {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+/* line 98, /Users/maryallisonsjulian/ruby/GK/app/assets/stylesheets/application.css.scss */
+.footerimg {
+  height: 10vh;
+  width: 80vw;
+  /*height: auto;
+  width: auto;*/
+  background-image: url(/assets/footer.png);
+  background-size: cover;
+  background-position: center;
+  /* margin-right: 5vw; */
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 1cm;
+  /* z-index: 1; */
+  position: relative;
+}
