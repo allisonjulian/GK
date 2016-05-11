@@ -43,4 +43,5 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'shoppe', '~> 1.0'
+gem 'shoppe', git: 'https://github.com/allisonjulian/shoppe.git'
+

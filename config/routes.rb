@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Shoppe::Engine => "/shoppe"
+  mount Shoppe::Engine => "/admin"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -59,4 +59,8 @@ Rails.application.routes.draw do
   post "product/:permalink", to: "products#buy", as: "buy"
   get "basket", to: "orders#show"
   root to: "products#index"
+  delete "basket", to: "orders#destroy"
+  match "checkout", to: "orders#checkout", as: "checkout", via: [:get, :patch]
+  match "checkout/pay", to: "orders#payment", as: "checkout_payment", via: [:get, :post]
+  match "checkout/confirm", to: "orders#confirmation", as: "checkout_confirmation", via: [:get, :post]
 end
