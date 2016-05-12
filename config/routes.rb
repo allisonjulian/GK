@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  get "category/:id", to: "products#category", as: "product_category"
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
   get "basket", to: "orders#show"

@@ -34,8 +34,9 @@ class ProductsController < ApplicationController
   # end
 
   def index
-    @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
-    @products = @products.group_by(&:product_category)
+    # @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
+    # @products = @products.group_by(&:product_category)
+    @parent_categories = Shoppe::ProductCategory.where(parent_id: nil)
   end
   
   def filter
@@ -70,6 +71,12 @@ class ProductsController < ApplicationController
     @product = Shoppe::Product.root.find_by_permalink!(params[:permalink])
     current_order.order_items.add_item(@product,1)
     redirect_to product_path(@product.permalink), :notice => "Product has been added successfuly!"
+  end
+
+  def category
+    # @products = Shoppe::ProductCategory.where(id: params[:id])
+    # Shoppe::Product.root.ordered.includes(:product_categories, :variants)
+    @products = Shoppe::Product.root.ordered.includes(:product_categories).where("shoppe_product_categories.id = #{params[:id]}")
   end
   
 end
