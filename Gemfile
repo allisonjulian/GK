@@ -46,3 +46,5 @@ end
 gem 'shoppe', git: 'https://github.com/allisonjulian/shoppe.git'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
+gem 'devise'
+

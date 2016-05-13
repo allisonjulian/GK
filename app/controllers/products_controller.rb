@@ -19,6 +19,8 @@
 
 
 class ProductsController < ApplicationController
+
+  before_action :authenticate_customer!
   
   before_filter do
     if params[:category_id]
