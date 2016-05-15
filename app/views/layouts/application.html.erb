@@ -9,35 +9,65 @@
 <body>
 
 <section id="products">
+
 <div class="row">
+  
+
+<!-- <div class="row"> -->
   <div class="headerimg">
-	<br><br><br>
+	<!-- <br><br><br> -->
     <!-- <div class="ui centered grid"> -->
+    <div class="ui centered grid">
+      <div class="six wide column fontpls">
+      <p style="margin-top:0.2cm">
+      <!-- <p id="notice"><%= notice %></p> -->
+      <% if customer_signed_in? %>
+        Logged in as <strong><%= current_customer.email %></strong>.
+        <%= link_to 'Edit profile', edit_customer_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_customer_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "Sign up", new_customer_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_customer_session_path, :class => 'navbar-link'  %>
+      <% end %>
+      </p>
+      </div>
+
+      <div class="two wide column"></div>
+      <div class="one wide column"></div>
+
+      <div class="right aligned seven wide column fontpls">
+      <% if current_order %>
+      <!-- <p style="border:2px solid #84D3DC; padding:5px; width:28vw; margin-top:0.2cm;"> -->
+      <p style="margin-top:0.2cm;">
+        You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
+        <%= number_to_currency current_order.total_before_tax %>. <%= link_to "Checkout", checkout_path %>
+      </p>
+      <% end %>
+      </div>
+    </div>
     <div class="ui centered grid">
         <div class="two wide column"></div>
         <div class="two wide column headerlinks"><%= link_to "Home", root_path %></div>
-        <div class="two wide column headerlinks"><%= link_to "Products", root_path %></div>
+        <div class="two wide column headerlinks"><%= link_to "Products", products_path %></div>
         <div class="four wide column headerlinks"><%= link_to " ", root_path %></div>
         <div class="one wide column"></div>
-        <div class="two wide column headerlinks"><%= link_to "My Cart", root_path %></div>
+        <div class="two wide column headerlinks"><%= link_to "My Cart", cart_path %></div>
         <div class="two wide column headerlinks"><%= link_to "Verify", root_path %></div>
         <div class="one wide column"></div>
   	</div>
+    <br><br><br>
+    <div class="ui centered grid">
+    <div class="eight wide column fontpls">
+  <!--   <%= link_to "View basket", cart_path %> -->
+    <%= flash[:notice] %>
+    </div>
+    <div class="eight wide column">
+<!--     <%= link_to "Checkout", checkout_path %> -->
+    </div>
+    </div>
   </div>
 </div>
-<br>
 
-<% if current_order %>
-<p style="border:1px solid black;padding:10px;">
-  You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
-  <%= number_to_currency current_order.total_before_tax %>.
-</p>
-<% end %>
-
-<%= link_to "View basket", basket_path %>
-<%= flash[:notice] %>
-
-<%= link_to "Checkout", checkout_path %>
 
 </section>
 

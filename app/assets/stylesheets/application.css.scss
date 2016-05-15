@@ -16,6 +16,12 @@
 
  @import "semantic-ui";
 
+ @import 'semantic-ui/globals/all';
+ @import 'semantic-ui/elements/all';
+ @import 'semantic-ui/collections/all';
+ @import 'semantic-ui/views/all';
+ @import 'semantic-ui/modules/all';
+
  @font-face {
 	font-family: 'ChampagneLimousines';
 	src: url('/assets/ChampagneLimousines.woff') format('woff');
@@ -35,8 +41,14 @@
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 1cm;
-	/* z-index: 1; */
+	/*z-index: 1;*/
 	position: relative;
+}
+
+.fontpls {
+	font-family: 'ChampagneLimousines' !important;
+	font-style: normal;
+	font-size: 1.2em;
 }
 
 .headerlinks {
@@ -44,7 +56,7 @@
 	font-style: normal;
 	/*color: #ffffff;*/
 	font-size: 1.4em;
-	margin-top: 5vh;
+	margin-top: 2vh;
 /*	z-index: 6; */
 	z-index: 6;
 }
