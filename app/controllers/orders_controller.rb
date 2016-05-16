@@ -6,6 +6,17 @@ class OrdersController < ApplicationController
 		redirect_to root_path, :notice => "Basket emptied successfully."
 	end
 
+  def quick_checkout
+    params[:order][:product].each do |product_id, quantity|
+      current_order.order_items.add_item(Shoppe::Product.find(product_id), quantity.to_i)
+    end
+
+    current_order.proceed_to_confirm(params[:order].permit(:first_name, :last_name, :billing_address1, :billing_address2, :billing_address3, :billing_address4, :billing_country_id, :billing_postcode, :email_address, :phone_number))
+    current_order.confirm!
+    session[:order_id] = nil
+    redirect_to root_path, :notice => "Order has been placed successfully!"
+  end
+
   def checkout
     @order = Shoppe::Order.find(current_order.id)
     if request.patch?
@@ -28,6 +39,14 @@ class OrdersController < ApplicationController
       session[:order_id] = nil
       redirect_to root_path, :notice => "Order has been placed successfully!"
     end
+  end
+
+  def quick
+    @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
+    @products = @products.group_by(&:product_category)
+    # @parent_categories = Shoppe::ProductCategory.where(parent_id: nil)
+    # @products = Shoppe::Product.all
+    @order = current_order
   end
 
 end

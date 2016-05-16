@@ -1,0 +1,38 @@
+<%= form_for @order, :url => quick_checkout_path, method: :post do |f| %>
+  <dl>
+	<% @products.each do |category, products| %>
+	  <h3><%= category.name %></h3>
+	  <ul>
+	    <% products.each do |product| %>
+	    <li>
+	      <h4><%= product.name %></h4>
+	      <p><%= product.short_description %></p>
+	      <p><b>Price:</b> <%= number_to_currency product.price %></p>
+	      Quantity: <input name="order[product][<%= product.id %>]">
+	    </li>
+	    <% end %>
+	  </ul>
+	<% end %>
+  </dl>
+  <dl>
+    <dt><%= f.label :first_name, 'Name' %></dt>
+    <dd><%= f.text_field :first_name %> <%= f.text_field :last_name %></dd>
+
+    <dt><%= f.label :billing_address1, 'Address' %></dt>
+    <dd><%= f.text_field :billing_address1 %></dd>
+    <dd><%= f.text_field :billing_address2 %></dd>
+    <dd><%= f.text_field :billing_address3 %></dd>
+    <dd><%= f.text_field :billing_address4 %></dd>
+    <dt><%= f.label :billing_postcode, 'Post code' %></dt>
+    <dd><%= f.text_field :billing_postcode %></dd>
+    <dd><%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, :include_blank => true %></dd>
+
+    <dt><%= f.label :email_address %></dt>
+    <dd><%= f.text_field :email_address %></dd>
+
+    <dt><%= f.label :phone_number %></dt>
+    <dd><%= f.text_field :phone_number %></dd>
+
+    <dd><%= f.submit 'Continue' %></dd>
+  </dl>
+<% end %>

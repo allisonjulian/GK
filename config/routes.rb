@@ -60,10 +60,12 @@ Rails.application.routes.draw do
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
   get "cart", to: "orders#show"
+  get "quick", to: "orders#quick"
   resources :products
   # root to: "products#index"
   root to: "pages#home"
   delete "cart", to: "orders#destroy"
+  match "quick_checkout", to: "orders#quick_checkout", as: "quick_checkout", via: [:post]
   match "checkout", to: "orders#checkout", as: "checkout", via: [:get, :patch]
   match "checkout/pay", to: "orders#payment", as: "checkout_payment", via: [:get, :post]
   match "checkout/confirm", to: "orders#confirmation", as: "checkout_confirmation", via: [:get, :post]
