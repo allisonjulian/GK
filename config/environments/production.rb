@@ -88,8 +88,8 @@ Rails.application.configure do
     :address        => 'smtp.gmail.com',
     :port           => 587,
     :authentication => :plain,
-    :user_name      => "mary.julian@obf.ateneo.edu",
-    :password       => ENV['GMAIL_PASSWORD'],
+    :user_name      => "mary.julian@obf.ateneo.edu", #Change this email to the default email that will be used for sending of emails
+    :password       => ENV['GMAIL_PASSWORD'], #Change password in heroku
     :domain         => 'gmail.com',
     :enable_starttls_auto => true
   }
