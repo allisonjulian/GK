@@ -80,4 +80,16 @@ Rails.application.configure do
 
   config.serve_static_files = true
   config.assets.compile = true
+
+  config.action_mailer.default_url_options = { host: 'https://sleepy-gorge-13163.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain: "gmail.com",
+      :user_name            => mary.julian@obf.ateneo.edu,
+      # :password             => ,
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+  }
 end
