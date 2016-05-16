@@ -85,12 +85,15 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'https://sleepy-gorge-13163.herokuapp.com', port: 80 }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.gmail.net',
-    :port           => '587',
+    :address        => 'smtp.gmail.com',
+    :port           => 587,
     :authentication => :plain,
     :user_name      => "mary.julian@obf.ateneo.edu",
     :password       => ENV['GMAIL_PASSWORD'],
     :domain         => 'gmail.com',
     :enable_starttls_auto => true
+  }
+  ActionMailer::Base.default_options = {
+    from: "mary.julian@obf.ateneo.edu"
   }
 end
