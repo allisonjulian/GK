@@ -54,4 +54,6 @@ end
 gem 'shoppe', git: 'https://github.com/allisonjulian/shoppe.git'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
-gem 'devise'
+gem 'devise', '~> 3.5.9'
+gem "simple_calendar", "~> 2.0"
+

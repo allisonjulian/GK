@@ -64,6 +64,7 @@ Rails.application.routes.draw do
   resources :products
   # root to: "products#index"
   root to: "pages#home"
+  get "faqs", to: "pages#faq"
   delete "cart", to: "orders#destroy"
   match "quick_checkout", to: "orders#quick_checkout", as: "quick_checkout", via: [:post]
   match "checkout", to: "orders#checkout", as: "checkout", via: [:get, :patch]
