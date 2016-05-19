@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/allisonjulian/shoppe.git
-  revision: 17365223aec8c06b672a08aa997b804931c87da4
+  revision: bcd1a8faff09268882e82062b5cd82b0ecc3ae32
   specs:
     shoppe (1.1.2)
       awesome_nested_set (~> 3.0.2)
